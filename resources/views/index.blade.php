@@ -10,16 +10,16 @@
     <meta name="author" content="Free-Template.co" />
     <link rel="shortcut icon" href="ftco-32x32.png">
     
-    <link rel="stylesheet" href="{{asset('css/custom-bs.css')}}">
-    <link rel="stylesheet" href="{{asset('css/jquery.fancybox.min.css')}}">
-    <link rel="stylesheet" href="{{asset('css/bootstrap-select.min.css')}}">
-    <link rel="stylesheet" href="{{asset('fonts/icomoon/style.css')}}">
-    <link rel="stylesheet" href="{{asset('fonts/line-icons/style.css')}}">
-    <link rel="stylesheet" href="{{asset('css/owl.carousel.min.css')}}">
-    <link rel="stylesheet" href="{{asset('css/animate.min.css')}}">
+    <link rel="stylesheet" href="css/custom-bs.css">
+    <link rel="stylesheet" href="css/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="css/bootstrap-select.min.css">
+    <link rel="stylesheet" href="fonts/icomoon/style.css">
+    <link rel="stylesheet" href="fonts/line-icons/style.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/animate.min.css">
 
     <!-- MAIN CSS -->
-    <link rel="stylesheet" href="{{asset('css/style.css')}}">    
+    <link rel="stylesheet" href="css/style.css">    
   </head>
   <body id="top">
 
@@ -337,6 +337,7 @@
 
           
         </ul>
+        
 
         <div class="row pagination-wrap">
           <div class="col-md-6 text-center text-md-left mb-4 mb-md-0">
@@ -449,4 +450,56 @@
 
      
   </body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Jobs</title>
+    <!-- إضافة jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        #results {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>بحث عن وظائف</h1>
+    <button id="searchJob">ابحث عن وظيفة</button>
+    <div id="results"></div>
+
+    <script>
+        $(document).ready(function(){
+            $("#searchJob").click(function(){
+                $.ajax({
+                    url: "/api/jobs", // تعديل هذا إلى مسار API الخاص بك
+                    type: "GET",
+                    success: function(data) {
+                        let resultsHtml = "";
+                        if (data.length > 0) {
+                            data.forEach(job => {
+                                resultsHtml += `<div>${job.title} - ${job.company}</div>`;
+                            });
+                        } else {
+                            resultsHtml = "<div>لا توجد وظائف متاحة حالياً.</div>";
+                        }
+                        $("#results").html(resultsHtml);
+                    },
+                    error: function(err) {
+                        console.log("Error:", err);
+                        $("#results").html("<div>حدث خطأ أثناء البحث عن الوظائف.</div>");
+                    }
+                });
+            });
+        });
+    </script>
+</body>
 </html>

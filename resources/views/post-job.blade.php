@@ -7,18 +7,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
     
-    <link rel="stylesheet" href="{{asset('css/custom-bs.css')}}">
-    <link rel="stylesheet" href="{{asset('css/jquery.fancybox.min.css')}}">
-    <link rel="stylesheet" href="{{asset('css/bootstrap-select.min.css')}}">
-    <link rel="stylesheet" href="{{asset('fonts/icomoon/style.css')}}">
-    <link rel="stylesheet" href="{{asset('fonts/line-icons/style.css')}}">
-    <link rel="stylesheet" href="{{asset('css/owl.carousel.min.css')}}">
-    <link rel="stylesheet" href="{{asset('css/animate.min.css')}}">
-    <link rel="stylesheet" href="{{asset('css/quill.snow.css')}}">
+    <link rel="stylesheet" href="css/custom-bs.css">
+    <link rel="stylesheet" href="css/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="css/bootstrap-select.min.css">
+    <link rel="stylesheet" href="fonts/icomoon/style.css">
+    <link rel="stylesheet" href="fonts/line-icons/style.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/animate.min.css">
+    <link rel="stylesheet" href="css/quill.snow.css">
     
 
     <!-- MAIN CSS -->
-    <link rel="stylesheet" href="{{('css/style.css')}}">    
+    <link rel="stylesheet" href="css/style.css">    
   </head>
   <body id="top">
 
@@ -46,7 +46,7 @@
     <header class="site-navbar mt-3">
       <div class="container-fluid">
         <div class="row align-items-center">
-          <div class="site-logo col-6"><a href="./index">JobBoard</a></div>
+          <div class="site-logo col-6"><a href="index.html">JobBoard</a></div>
 
           <nav class="mx-auto site-navigation">
             <ul class="site-menu js-clone-nav d-none d-xl-block ml-0 pl-0">
